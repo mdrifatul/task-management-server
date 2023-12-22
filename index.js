@@ -31,6 +31,11 @@ async function run() {
       res.send(result)
     })
 
+    app.get('/gettask', async(req, res)=>{
+      const result = await taskcollection.find().toArray()
+      res.send(result)
+    })
+
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
   }
